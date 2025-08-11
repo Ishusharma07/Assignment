@@ -1,12 +1,9 @@
 #include <stdio.h>
 void main()
 {
-	int a = 10;
-	int b = 20;
-	int  tamp;
-	tamp = a;
-	a=b;
-	b = tamp; 
+	int a = 85;
+	int cel;
+	cel = a*1.8+32;
 	
-	printf(" a= %d" "b=%d" , a,b );
+	printf("cel= %d" , cel);
 }

@@ -1,0 +1,16 @@
+Que (1) => Login to MySQL and view all databases already present. You should get
+following result :
++--------------------+
+| Database           |
++--------------------+
+| countries          |
+| information_schema |
+| ishu               |
+| jobs               |
+| mysql              |
+| performance_schema |
+| sakila             |
+| student            |
+| sys                |
+| world              |
++--------------------+

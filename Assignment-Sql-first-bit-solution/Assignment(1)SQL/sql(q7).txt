@@ -1,0 +1,10 @@
+Que 7 => Create a Department table with following structure
+
++-----------------+--------------+------+-----+---------+-------+
+| Field           | Type         | Null | Key | Default | Extra |
++-----------------+--------------+------+-----+---------+-------+
+| DEPARTMENT_ID   | decimal(4,0) | NO   | PRI | 0       |       |
+| DEPARTMENT_NAME | decimal(4,0) | NO   |     | NULL    |       |
+| MANAGER_ID      | decimal(4,0) | NO   | PRI | 0       |       |
+| LOCTION_ID      | decimal(4,0) | YES  |     | NULL    |       |
++-----------------+--------------+------+-----+---------+-------+

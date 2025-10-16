@@ -1,0 +1,548 @@
+----------------------------------------------------------- PATIENT PROJECT ------------------------------------------------------------------
+1. Patient Information:
+Capture and store essential patient information such as name, date of birth, gender, contact
+details, and insurance information.
+
+======================================================
+1 CREATE DATABAES PATIENT;
+
+mysql> CREATE DATABASE PATIENT;
+Query OK, 1 row affected (0.04 sec)
+
+=======================================================
+
+2 USE DATABASE ;
+
+mysql> patient;
+Database changed
+
+========================================================
+3 . CREATE TABEL PATIENT ;
+
+mysql > CREATE TABLE patient (
+    patient_id INT NOT NULL AUTO_INCREMENT,
+    patient_name VARCHAR(30) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    gender CHAR(1),
+    contact_number VARCHAR(20),
+    Address VARCHAR(20),
+    insurance_provied VARCHAR(30),
+    insurance_number VARCHAR(20),
+    PRIMARY KEY (patient_id)
+);
+
+
+===========================================================
+4 .  Insert table patient
+
+mysql > INSERT INTO patient (patient_id, patient_name, date_of_birth, gender, contact_number, Address, insurance_provied, insurance_number) VALUES
+(1, 'Amit Sharma', '1985-03-14', 'M', '9876543210', 'Delhi', 'Star Health', 'SH12345'),
+(2, 'Neha Verma', '1990-07-22', 'F', '9898765432', 'Mumbai', 'HDFC Ergo', 'HE67890'),
+(3, 'Rohit Mehta', '1978-11-02', 'M', '9812345678', 'Pune', 'ICICI Lombard', 'IL23456'),
+(4, 'Priya Singh', '1995-09-10', 'F', '9823456789', 'Kolkata', 'Bajaj Allianz', 'BA98765'),
+(5, 'Suresh Kumar', '1980-05-18', 'M', '9834567890', 'Chennai', 'Reliance Health', 'RH11223'),
+(6, 'Anita Joshi', '1992-01-25', 'F', '9845678901', 'Hyderabad', 'Star Health', 'SH55667'),
+(7, 'Deepak Yadav', '1988-08-09', 'M', '9856789012', 'Jaipur', 'HDFC Ergo', 'HE44556'),
+(8, 'Pooja Rani', '1999-06-30', 'F', '9867890123', 'Lucknow', 'ICICI Lombard', 'IL77889'),
+(9, 'Rajesh Patel', '1975-12-12', 'M', '9878901234', 'Ahmedabad', 'Bajaj Allianz', 'BA22334'),
+(10, 'Sneha Gupta', '1983-02-28', 'F', '9889012345', 'Indore', 'Reliance Health', 'RH33445'),
+(11, 'Vikas Malhotra', '1991-04-19', 'M', '9890123456', 'Bhopal', 'Star Health', 'SH66778'),
+(12, 'Nisha Rai', '1987-10-11', 'F', '9901234567', 'Surat', 'HDFC Ergo', 'HE55678'),
+(13, 'Harish Nair', '1979-03-03', 'M', '9912345678', 'Kochi', 'ICICI Lombard', 'IL88990'),
+(14, 'Ritu Sharma', '1994-12-21', 'F', '9923456789', 'Nagpur', 'Bajaj Allianz', 'BA66778'),
+(15, 'Karan Thakur', '1982-07-05', 'M', '9934567890', 'Dehradun', 'Reliance Health', 'RH77889'),
+(16, 'Meena Das', '1993-09-17', 'F', '9945678901', 'Guwahati', 'Star Health', 'SH88991'),
+(17, 'Arjun Pillai', '1989-05-29', 'M', '9956789012', 'Trivandrum', 'HDFC Ergo', 'HE11223'),
+(18, 'Sunita Chauhan', '1997-11-08', 'F', '9967890123', 'Patna', 'ICICI Lombard', 'IL33445'),
+(19, 'Manish Goyal', '1986-04-25', 'M', '9978901234', 'Chandigarh', 'Bajaj Allianz', 'BA55667'),
+(20, 'Kavita Tiwari', '1998-02-02', 'F', '9989012345', 'Ranchi', 'Reliance Health', 'RH66778');
+
+==============================================================
+
+5  table patient;
+
+mysql> table patient;
++------------+----------------+---------------+--------+----------------+------------+-------------------+------------------+
+| patient_id | patient_name   | date_of_birth | gender | contact_number | Address    | insurance_provied | insurance_number |
++------------+----------------+---------------+--------+----------------+------------+-------------------+------------------+
+|          1 | Amit Sharma    | 1985-03-14    | M      | 9876543210     | Delhi      | Star Health       | SH12345          |
+|          2 | Neha Verma     | 1990-07-22    | F      | 9898765432     | Mumbai     | HDFC Ergo         | HE67890          |
+|          3 | Rohit Mehta    | 1978-11-02    | M      | 9812345678     | Pune       | ICICI Lombard     | IL23456          |
+|          4 | Priya Singh    | 1995-09-10    | F      | 9823456789     | Kolkata    | Bajaj Allianz     | BA98765          |
+|          5 | Suresh Kumar   | 1980-05-18    | M      | 9834567890     | Chennai    | Reliance Health   | RH11223          |
+|          6 | Anita Joshi    | 1992-01-25    | F      | 9845678901     | Hyderabad  | Star Health       | SH55667          |
+|          7 | Deepak Yadav   | 1988-08-09    | M      | 9856789012     | Jaipur     | HDFC Ergo         | HE44556          |
+|          8 | Pooja Rani     | 1999-06-30    | F      | 9867890123     | Lucknow    | ICICI Lombard     | IL77889          |
+|          9 | Rajesh Patel   | 1975-12-12    | M      | 9878901234     | Ahmedabad  | Bajaj Allianz     | BA22334          |
+|         10 | Sneha Gupta    | 1983-02-28    | F      | 9889012345     | Indore     | Reliance Health   | RH33445          |
+|         11 | Vikas Malhotra | 1991-04-19    | M      | 9890123456     | Bhopal     | Star Health       | SH66778          |
+|         12 | Nisha Rai      | 1987-10-11    | F      | 9901234567     | Surat      | HDFC Ergo         | HE55678          |
+|         13 | Harish Nair    | 1979-03-03    | M      | 9912345678     | Kochi      | ICICI Lombard     | IL88990          |
+|         14 | Ritu Sharma    | 1994-12-21    | F      | 9923456789     | Nagpur     | Bajaj Allianz     | BA66778          |
+|         15 | Karan Thakur   | 1982-07-05    | M      | 9934567890     | Dehradun   | Reliance Health   | RH77889          |
+|         16 | Meena Das      | 1993-09-17    | F      | 9945678901     | Guwahati   | Star Health       | SH88991          |
+|         17 | Arjun Pillai   | 1989-05-29    | M      | 9956789012     | Trivandrum | HDFC Ergo         | HE11223          |
+|         18 | Sunita Chauhan | 1997-11-08    | F      | 9967890123     | Patna      | ICICI Lombard     | IL33445          |
+|         19 | Manish Goyal   | 1986-04-25    | M      | 9978901234     | Chandigarh | Bajaj Allianz     | BA55667          |
+|         20 | Kavita Tiwari  | 1998-02-02    | F      | 9989012345     | Ranchi     | Reliance Health   | RH66778          |
++------------+----------------+---------------+--------+----------------+------------+-------------------+------------------+
+
+============================================================
+2. Medical History:
+Design tables to store patient medical history, including diagnoses, allergies, medications,
+and previous treatments.
+
+==============================================================
+
+1 . CREATE TBALE MEDICAL_HISTORY
+
+mysql >  CREATE TABLE MEDICAL_HISTORY (
+    history_id INT NOT NULL AUTO_INCREMENT,
+    patient_id INT,
+    allergy VARCHAR(50),
+    treatment VARCHAR(20),
+    medication VARCHAR(20),
+    notes VARCHAR(30),
+    PRIMARY KEY (history_id),
+    KEY (patient_id)
+);
+
+=============================================
+2 INSET INTO MEDICAL_HISTORY;
+
+mysql >  INSERT INTO medical_history (history_id, patient_id, allergy, treatment, medication, notes) VALUES
+(1, 1, 'Penicillin', 'Flu treatment', 'Paracetamol', 'Recovering well'),
+(2, 2, 'None', 'Appendectomy', 'Antibiotics', 'Surgery successful'),
+(3, 3, 'Peanuts', 'Allergy reaction', 'Antihistamine', 'Carries EpiPen'),
+(4, 4, 'None', 'Fracture treatment', 'Painkiller', 'Fracture healed'),
+(5, 5, 'Dust', 'Asthma', 'Inhaler', 'Use inhaler daily'),
+(6, 6, 'Pollen', 'Seasonal allergy', 'Antihistamine', 'Mild reaction'),
+(7, 7, 'None', 'Diabetes checkup', 'Insulin', 'Monitoring sugar levels'),
+(8, 8, 'Seafood', 'Food poisoning', 'Rehydration', 'Recovered'),
+(9, 9, 'Latex', 'Skin rash', 'Corticosteroid', 'Avoid latex gloves'),
+(10, 10, 'None', 'Cold treatment', 'Paracetamol', 'Recovering normally'),
+(11, 11, 'Gluten', 'Celiac disease', 'Gluten-free diet', 'Regular checkup'),
+(12, 12, 'None', 'Migraine', 'Painkiller', 'Mild episodes'),
+(13, 13, 'Shellfish', 'Allergic reaction', 'Antihistamine', 'Carry epipen'),
+(14, 14, 'None', 'Hypertension', 'Beta-blocker', 'Regular monitoring'),
+(15, 15, 'Eggs', 'Food allergy', 'Antihistamine', 'Carry medication'),
+(16, 16, 'None', 'Routine checkup', 'None', 'Healthy'),
+(17, 17, 'Pollen', 'Allergy', 'Antihistamine', 'Seasonal checkups'),
+(18, 18, 'None', 'Flu treatment', 'Paracetamol', 'Recovering'),
+(19, 19, 'Penicillin', 'Infection', 'Antibiotics', 'Follow up required'),
+(20, 20, 'None', 'Dental treatment', 'Painkiller', 'No complications');
+
+=================================================
+3 .  TABLE  MEDICAL_HISTORY;
+
+mysql>  table  medical_history;
++------------+------------+------------+--------------------+------------------+-------------------------+
+| history_id | patient_id | allergy    | treatment          | medication       | notes                   |
++------------+------------+------------+--------------------+------------------+-------------------------+
+|          1 |          1 | Penicillin | Flu treatment      | Paracetamol      | Recovering well         |
+|          2 |          2 | None       | Appendectomy       | Antibiotics      | Surgery successful      |
+|          3 |          3 | Peanuts    | Allergy reaction   | Antihistamine    | Carries EpiPen          |
+|          4 |          4 | None       | Fracture treatment | Painkiller       | Fracture healed         |
+|          5 |          5 | Dust       | Asthma             | Inhaler          | Use inhaler daily       |
+|          6 |          6 | Pollen     | Seasonal allergy   | Antihistamine    | Mild reaction           |
+|          7 |          7 | None       | Diabetes checkup   | Insulin          | Monitoring sugar levels |
+|          8 |          8 | Seafood    | Food poisoning     | Rehydration      | Recovered               |
+|          9 |          9 | Latex      | Skin rash          | Corticosteroid   | Avoid latex gloves      |
+|         10 |         10 | None       | Cold treatment     | Paracetamol      | Recovering normally     |
+|         11 |         11 | Gluten     | Celiac disease     | Gluten-free diet | Regular checkup         |
+|         12 |         12 | None       | Migraine           | Painkiller       | Mild episodes           |
+|         13 |         13 | Shellfish  | Allergic reaction  | Antihistamine    | Carry epipen            |
+|         14 |         14 | None       | Hypertension       | Beta-blocker     | Regular monitoring      |
+|         15 |         15 | Eggs       | Food allergy       | Antihistamine    | Carry medication        |
+|         16 |         16 | None       | Routine checkup    | None             | Healthy                 |
+|         17 |         17 | Pollen     | Allergy            | Antihistamine    | Seasonal checkups       |
+|         18 |         18 | None       | Flu treatment      | Paracetamol      | Recovering              |
+|         19 |         19 | Penicillin | Infection          | Antibiotics      | Follow up required      |
+|         20 |         20 | None       | Dental treatment   | Painkiller       | No complications        |
++------------+------------+------------+--------------------+------------------+-------------------------+
+
+
+=============================================================
+ 3. Encounter Records:
+Create tables to track patient encounters, including details on appointments, admissions,
+and discharges.
+
+=============================================================
+1  CREATE TABLE ENCOUNTER;
+
+mysql > CREATE TABLE ENCOUNTER (
+    encounter_id INT NOT NULL AUTO_INCREMENT,
+    patient_id INT,
+    doctor_name VARCHAR(20),
+    encounter_type VARCHAR(20),
+    encounter_date DATE,
+    encounter_time TIME,
+    room_number INT,
+    follow_up_date DATE,
+    PRIMARY KEY (encounter_id),
+    KEY (patient_id)
+);
+
+
+==============================================================
+2 . insert into tabel ENCOUNTER ;
+
+MYSQL > INSERT INTO encounter (encounter_id, patient_id, doctor_name, encounter_type, encounter_date, encounter_time, room_number, follow_up_date) VALUES
+(1, 1, 'Dr. Sharma', 'Appointment', '2025-10-01', '10:00:00', NULL, '2025-10-15'),
+(2, 2, 'Dr. Verma', 'Admission', '2025-09-25', '09:30:00', 101, '2025-10-02'),
+(3, 3, 'Dr. Gupta', 'Discharge', '2025-09-20', '14:00:00', 102, NULL),
+(4, 4, 'Dr. Sharma', 'Appointment', '2025-10-05', '11:30:00', NULL, '2025-10-20'),
+(5, 5, 'Dr. Verma', 'Admission', '2025-09-28', '08:45:00', 103, '2025-10-05'),
+(6, 6, 'Dr. Gupta', 'Appointment', '2025-10-02', '15:00:00', NULL, '2025-10-16'),
+(7, 7, 'Dr. Sharma', 'Discharge', '2025-09-22', '12:00:00', 104, NULL),
+(8, 8, 'Dr. Verma', 'Appointment', '2025-10-03', '10:15:00', NULL, '2025-10-17'),
+(9, 9, 'Dr. Gupta', 'Admission', '2025-09-30', '09:00:00', 105, '2025-10-07'),
+(10, 10, 'Dr. Sharma', 'Discharge', '2025-09-27', '13:30:00', 106, NULL),
+(11, 11, 'Dr. Verma', 'Appointment', '2025-10-04', '11:00:00', NULL, '2025-10-18'),
+(12, 12, 'Dr. Gupta', 'Admission', '2025-09-29', '10:30:00', 107, '2025-10-06'),
+(13, 13, 'Dr. Sharma', 'Discharge', '2025-09-23', '14:15:00', 108, NULL),
+(14, 14, 'Dr. Verma', 'Appointment', '2025-10-06', '09:45:00', NULL, '2025-10-21'),
+(15, 15, 'Dr. Gupta', 'Admission', '2025-09-26', '08:30:00', 109, '2025-10-03'),
+(16, 16, 'Dr. Sharma', 'Discharge', '2025-09-24', '12:45:00', 110, NULL),
+(17, 17, 'Dr. Verma', 'Appointment', '2025-10-07', '10:30:00', NULL, '2025-10-22'),
+(18, 18, 'Dr. Gupta', 'Admission', '2025-09-27', '09:15:00', 111, '2025-10-04'),
+(19, 19, 'Dr. Sharma', 'Discharge', '2025-09-25', '13:00:00', 112, NULL),
+(20, 20, 'Dr. Verma', 'Appointment', '2025-10-08', '11:15:00', NULL, '2025-10-23');
+ =======================================================
+3  TABLE ECNOUNTER ;
+
+mysql> TABLE ENCOUNTER;
++--------------+------------+-------------+----------------+----------------+----------------+-------------+----------------+
+| encounter_id | patient_id | doctor_name | encounter_type | encounter_date | encounter_time | room_number | follow_up_date |
++--------------+------------+-------------+----------------+----------------+----------------+-------------+----------------+
+|            1 |          1 | Dr. Sharma  | Appointment    | 2025-10-01     | 10:00:00       |        NULL | 2025-10-15     |
+|            2 |          2 | Dr. Verma   | Admission      | 2025-09-25     | 09:30:00       |         101 | 2025-10-02     |
+|            3 |          3 | Dr. Gupta   | Discharge      | 2025-09-20     | 14:00:00       |         102 | NULL           |
+|            4 |          4 | Dr. Sharma  | Appointment    | 2025-10-05     | 11:30:00       |        NULL | 2025-10-20     |
+|            5 |          5 | Dr. Verma   | Admission      | 2025-09-28     | 08:45:00       |         103 | 2025-10-05     |
+|            6 |          6 | Dr. Gupta   | Appointment    | 2025-10-02     | 15:00:00       |        NULL | 2025-10-16     |
+|            7 |          7 | Dr. Sharma  | Discharge      | 2025-09-22     | 12:00:00       |         104 | NULL           |
+|            8 |          8 | Dr. Verma   | Appointment    | 2025-10-03     | 10:15:00       |        NULL | 2025-10-17     |
+|            9 |          9 | Dr. Gupta   | Admission      | 2025-09-30     | 09:00:00       |         105 | 2025-10-07     |
+|           10 |         10 | Dr. Sharma  | Discharge      | 2025-09-27     | 13:30:00       |         106 | NULL           |
+|           11 |         11 | Dr. Verma   | Appointment    | 2025-10-04     | 11:00:00       |        NULL | 2025-10-18     |
+|           12 |         12 | Dr. Gupta   | Admission      | 2025-09-29     | 10:30:00       |         107 | 2025-10-06     |
+|           13 |         13 | Dr. Sharma  | Discharge      | 2025-09-23     | 14:15:00       |         108 | NULL           |
+|           14 |         14 | Dr. Verma   | Appointment    | 2025-10-06     | 09:45:00       |        NULL | 2025-10-21     |
+|           15 |         15 | Dr. Gupta   | Admission      | 2025-09-26     | 08:30:00       |         109 | 2025-10-03     |
+|           16 |         16 | Dr. Sharma  | Discharge      | 2025-09-24     | 12:45:00       |         110 | NULL           |
+|           17 |         17 | Dr. Verma   | Appointment    | 2025-10-07     | 10:30:00       |        NULL | 2025-10-22     |
+|           18 |         18 | Dr. Gupta   | Admission      | 2025-09-27     | 09:15:00       |         111 | 2025-10-04     |
+|           19 |         19 | Dr. Sharma  | Discharge      | 2025-09-25     | 13:00:00       |         112 | NULL           |
+|           20 |         20 | Dr. Verma   | Appointment    | 2025-10-08     | 11:15:00       |        NULL | 2025-10-23     |
++--------------+------------+-------------+----------------+----------------+----------------+-------------+----------------+
+
+
+========================================================================
+4. Diagnostic Tests and Results:
+Implement tables to store information about diagnostic tests, including test types, results,
+and dates.
+
+=========================================================================
+
+1 CREATE TABLE DIAGNOSTIC;
+
+mysql >  CREATE TABLE diagnostic (
+    diagnostic_id INT NOT NULL AUTO_INCREMENT,
+    patient_id INT,
+    test_name VARCHAR(50),
+    test_date DATE,
+    result VARCHAR(100),
+    notes VARCHAR(100),
+    PRIMARY KEY (diagnostic_id),
+    KEY (patient_id)
+);
+
+
+=========================================================================
+
+2 . INSERT DATA TABLE DIAGNOSTIC;
+
+ysql> INSERT INTO diagnostic (diagnostic_id, patient_id, test_name, test_date, result, notes) VALUES
+    -> (1, 1, 'Blood Test', '2025-10-01', 'Hemoglobin: 13.5 g/dL', 'Normal range'),
+    -> (2, 2, 'X-Ray Chest', '2025-09-25', 'No abnormalities', 'Routine check'),
+    -> (3, 3, 'Allergy Test', '2025-09-20', 'Peanut allergy detected', 'Avoid peanuts'),
+    -> (4, 4, 'MRI Brain', '2025-10-05', 'Normal', 'No issues detected'),
+    -> (5, 5, 'Spirometry', '2025-09-28', 'FEV1: 80%', 'Asthma under control'),
+    -> (6, 6, 'Blood Test', '2025-10-02', 'WBC: 6000/mm³', 'Normal range'),
+    -> (7, 7, 'HbA1c', '2025-09-22', '7.2%', 'Diabetes monitoring'),
+    -> (8, 8, 'Stool Test', '2025-10-03', 'No infection', 'Recovered from food poisoning'),
+    -> (9, 9, 'Skin Test', '2025-09-30', 'Latex allergy positive', 'Avoid latex'),
+    -> (10, 10, 'Cold Test', '2025-09-27', 'Negative', 'Recovering normally'),
+    -> (11, 11, 'Celiac Test', '2025-10-04', 'Gluten sensitivity detected', 'Follow diet'),
+    -> (12, 12, 'MRI Head', '2025-09-29', 'Normal', 'Mild migraine'),
+    -> (13, 13, 'Allergy Panel', '2025-09-23', 'Shellfish allergy positive', 'Carry epipen'),
+    -> (14, 14, 'Blood Pressure', '2025-10-06', '140/90 mmHg', 'Monitor regularly'),
+    -> (15, 15, 'Food Allergy Test', '2025-09-26', 'Egg allergy', 'Carry medication'),
+    -> (16, 16, 'Routine Checkup', '2025-10-02', 'All parameters normal', 'Healthy'),
+    -> (17, 17, 'Allergy Test', '2025-10-07', 'Pollen allergy', 'Seasonal medication'),
+    -> (18, 18, 'Flu Test', '2025-09-27', 'Positive', 'Recovering'),
+    -> (19, 19, 'Blood Culture', '2025-09-25', 'Bacterial infection', 'Follow up needed'),
+    -> (20, 20, 'Dental X-Ray', '2025-10-08', 'No issues', 'Routine dental check');
+
+====================================================================
+ 3 . table daignostic
+
+
+mysql> table diagnostic;
++---------------+------------+-------------------+------------+-----------------------------+-------------------------------+
+| diagnostic_id | patient_id | test_name         | test_date  | result                      | notes                         |
++---------------+------------+-------------------+------------+-----------------------------+-------------------------------+
+|             1 |          1 | Blood Test        | 2025-10-01 | Hemoglobin: 13.5 g/dL       | Normal range                  |
+|             2 |          2 | X-Ray Chest       | 2025-09-25 | No abnormalities            | Routine check                 |
+|             3 |          3 | Allergy Test      | 2025-09-20 | Peanut allergy detected     | Avoid peanuts                 |
+|             4 |          4 | MRI Brain         | 2025-10-05 | Normal                      | No issues detected            |
+|             5 |          5 | Spirometry        | 2025-09-28 | FEV1: 80%                   | Asthma under control          |
+|             6 |          6 | Blood Test        | 2025-10-02 | WBC: 6000/mm³               | Normal range                  |
+|             7 |          7 | HbA1c             | 2025-09-22 | 7.2%                        | Diabetes monitoring           |
+|             8 |          8 | Stool Test        | 2025-10-03 | No infection                | Recovered from food poisoning |
+|             9 |          9 | Skin Test         | 2025-09-30 | Latex allergy positive      | Avoid latex                   |
+|            10 |         10 | Cold Test         | 2025-09-27 | Negative                    | Recovering normally           |
+|            11 |         11 | Celiac Test       | 2025-10-04 | Gluten sensitivity detected | Follow diet                   |
+|            12 |         12 | MRI Head          | 2025-09-29 | Normal                      | Mild migraine                 |
+|            13 |         13 | Allergy Panel     | 2025-09-23 | Shellfish allergy positive  | Carry epipen                  |
+|            14 |         14 | Blood Pressure    | 2025-10-06 | 140/90 mmHg                 | Monitor regularly             |
+|            15 |         15 | Food Allergy Test | 2025-09-26 | Egg allergy                 | Carry medication              |
+|            16 |         16 | Routine Checkup   | 2025-10-02 | All parameters normal       | Healthy                       |
+|            17 |         17 | Allergy Test      | 2025-10-07 | Pollen allergy              | Seasonal medication           |
+|            18 |         18 | Flu Test          | 2025-09-27 | Positive                    | Recovering                    |
+|            19 |         19 | Blood Culture     | 2025-09-25 | Bacterial infection         | Follow up needed              |
+|            20 |         20 | Dental X-Ray      | 2025-10-08 | No issues                   | Routine dental check          |
++---------------+------------+-------------------+------------+-----------------------------+-------------------------------+
+20 rows in set (0.00 sec)
+
+==============================================================
+ 5. Doctors Information:
+Capture and manage information about Doctors
+
+==============================================================
+1 CREATE TABLE DOCTOR_INFRORMATION;
+
+mysql> CREATE TABLE DOCTOR(
+    ->     doctor_id INT NOT NULL AUTO_INCREMENT,
+    ->     doctor_name VARCHAR(50) NOT NULL,
+    ->     specialization VARCHAR(50),
+    ->     contact_number VARCHAR(20),
+    ->     room_number INT,
+    ->     PRIMARY KEY (doctor_id)
+    -> );
+
+===============================================================
+2 INSERT INTO TABLE DOCTOR;
+
+INSERT INTO doctor (doctor_id, doctor_name, specialization, contact_number, room_number) VALUES
+(1, 'Dr. Rajesh Sharma', 'Cardiology', '9876543210', 101),
+(2, 'Dr. Neha Verma', 'Neurology', '9898765432', 102),
+(3, 'Dr. Rohit Mehta', 'Orthopedics', '9812345678', 103),
+(4, 'Dr. Priya Singh', 'Pediatrics', '9823456789', 104),
+(5, 'Dr. Suresh Kumar', 'General Medicine', '9834567890', 105),
+(6, 'Dr. Anita Joshi', 'Dermatology', '9845678901', 106),
+(7, 'Dr. Deepak Yadav', 'ENT', '9856789012', 107),
+(8, 'Dr. Pooja Rani', 'Gynecology', '9867890123', 108),
+(9, 'Dr. Rajesh Patel', 'Urology', '9878901234', 109),
+(10, 'Dr. Sneha Gupta', 'Oncology', '9889012345', 110),
+(11, 'Dr. Vikas Malhotra', 'Cardiology', '9890123456', 111),
+(12, 'Dr. Nisha Rai', 'Neurology', '9901234567', 112),
+(13, 'Dr. Harish Nair', 'Orthopedics', '9912345678', 113),
+(14, 'Dr. Ritu Sharma', 'Pediatrics', '9923456789', 114),
+(15, 'Dr. Karan Thakur', 'General Medicine', '9934567890', 115),
+(16, 'Dr. Meena Das', 'Dermatology', '9945678901', 116),
+(17, 'Dr. Arjun Pillai', 'ENT', '9956789012', 117),
+(18, 'Dr. Sunita Chauhan', 'Gynecology', '9967890123', 118),
+(19, 'Dr. Manish Goyal', 'Urology', '9978901234', 119),
+(20, 'Dr. Kavita Tiwari', 'Oncology', '9989012345', 120);
+=================================================================
+mysql> TABLE DOCTOR;
++-----------+--------------------+------------------+----------------+-------------+
+| doctor_id | doctor_name        | specialization   | contact_number | room_number |
++-----------+--------------------+------------------+----------------+-------------+
+|         1 | Dr. Rajesh Sharma  | Cardiology       | 9876543210     |         101 |
+|         2 | Dr. Neha Verma     | Neurology        | 9898765432     |         102 |
+|         3 | Dr. Rohit Mehta    | Orthopedics      | 9812345678     |         103 |
+|         4 | Dr. Priya Singh    | Pediatrics       | 9823456789     |         104 |
+|         5 | Dr. Suresh Kumar   | General Medicine | 9834567890     |         105 |
+|         6 | Dr. Anita Joshi    | Dermatology      | 9845678901     |         106 |
+|         7 | Dr. Deepak Yadav   | ENT              | 9856789012     |         107 |
+|         8 | Dr. Pooja Rani     | Gynecology       | 9867890123     |         108 |
+|         9 | Dr. Rajesh Patel   | Urology          | 9878901234     |         109 |
+|        10 | Dr. Sneha Gupta    | Oncology         | 9889012345     |         110 |
+|        11 | Dr. Vikas Malhotra | Cardiology       | 9890123456     |         111 |
+|        12 | Dr. Nisha Rai      | Neurology        | 9901234567     |         112 |
+|        13 | Dr. Harish Nair    | Orthopedics      | 9912345678     |         113 |
+|        14 | Dr. Ritu Sharma    | Pediatrics       | 9923456789     |         114 |
+|        15 | Dr. Karan Thakur   | General Medicine | 9934567890     |         115 |
+|        16 | Dr. Meena Das      | Dermatology      | 9945678901     |         116 |
+|        17 | Dr. Arjun Pillai   | ENT              | 9956789012     |         117 |
+|        18 | Dr. Sunita Chauhan | Gynecology       | 9967890123     |         118 |
+|        19 | Dr. Manish Goyal   | Urology          | 9978901234     |         119 |
+|        20 | Dr. Kavita Tiwari  | Oncology         | 9989012345     |         120 |
++-----------+--------------------+------------------+----------------+-------------+
+
+===========================================================
+
+6. Prescriptions:
+Design tables to handle prescription data, including prescribed medications, dosage
+instructions, and dispensing details.
+
+=============================================================
+1 CREATE TABLE PRECRIPTION
+
+ MSQL  > CREATE TABLE prescription (
+    prescription_id INT NOT NULL AUTO_INCREMENT,
+    patient_id INT,
+    doctor_id INT,
+    prescription_date DATE,
+    medication_name VARCHAR(50),
+    dosage VARCHAR(50),
+    duration VARCHAR(20),
+    notes VARCHAR(100),
+    PRIMARY KEY (prescription_id),
+    KEY (patient_id),
+    KEY (doctor_id)
+);
+
+====================================================
+1 INSERT INTO TABEL PRESCRICPTION;
+
+mysql> INSERT INTO prescription (prescription_id, patient_id, doctor_id, prescription_date, medication_name, dosage, duration, notes) VALUES
+    -> (1, 1, 1, '2025-10-01', 'Paracetamol', '1 tablet twice a day', '5 days', 'Take after food'),
+    -> (2, 2, 2, '2025-09-25', 'Amoxicillin', '500 mg thrice a day', '7 days', 'Finish full course'),
+    -> (3, 3, 3, '2025-09-20', 'Antihistamine', '10 mg once daily', '10 days', 'Carry EpiPen if allergic reaction occurs'),
+    -> (4, 4, 1, '2025-10-05', 'Ibuprofen', '400 mg twice a day', '5 days', 'Take after meals'),
+    -> (5, 5, 2, '2025-09-28', 'Salbutamol Inhaler', '2 puffs as needed', 'As required', 'Use inhaler during asthma attack'),
+    -> (6, 6, 3, '2025-10-02', 'Cetirizine', '10 mg once daily', '7 days', 'For seasonal allergy'),
+    -> (7, 7, 1, '2025-09-22', 'Insulin', '10 units before breakfast', 'Daily', 'Monitor blood sugar regularly'),
+    -> (8, 8, 2, '2025-10-03', 'Oral Rehydration Salts', '1 packet thrice a day', '3 days', 'Drink plenty of fluids'),
+    -> (9, 9, 3, '2025-09-30', 'Hydrocortisone Cream', 'Apply twice daily', '7 days', 'Avoid latex contact'),
+    -> (10, 10, 1, '2025-09-27', 'Paracetamol', '1 tablet every 6 hours', '3 days', 'Recovering normally'),
+    -> (11, 11, 2, '2025-10-04', 'Gluten-free supplements', 'As per diet chart', 'Ongoing', 'Follow diet strictly'),
+    -> (12, 12, 3, '2025-09-29', 'Migraine Relief Tablet', '1 tablet as needed', 'As required', 'Monitor headache frequency'),
+    -> (13, 13, 1, '2025-09-23', 'Antihistamine', '10 mg once daily', '10 days', 'Carry epipen for shellfish allergy'),
+    -> (14, 14, 2, '2025-10-06', 'Beta-blocker', '50 mg once daily', 'Daily', 'Monitor blood pressure regularly'),
+    -> (15, 15, 3, '2025-09-26', 'Antihistamine', '10 mg once daily', '7 days', 'For egg allergy'),
+    -> (16, 16, 1, '2025-10-02', 'Multivitamin', '1 tablet daily', '30 days', 'Healthy individual'),
+    -> (17, 17, 2, '2025-10-07', 'Antihistamine', '10 mg once daily', '10 days', 'Seasonal allergy check'),
+    -> (18, 18, 3, '2025-09-27', 'Paracetamol', '1 tablet every 8 hours', '5 days', 'Recovering from flu'),
+    -> (19, 19, 1, '2025-09-25', 'Antibiotics', '500 mg twice a day', '7 days', 'Follow up required'),
+    -> (20, 20, 2, '2025-10-08', 'Painkiller', '1 tablet every 6 hours', '3 days', 'Routine dental care');
+Query OK, 20 rows affected (0.01 sec)
+
+=================================================================
+3 . TABLE PRESCRICPTION;
+
++-----------------+------------+-----------+-------------------+-------------------------+---------------------------+-------------+------------------------------------------+
+| prescription_id | patient_id | doctor_id | prescription_date | medication_name         | dosage                    | duration    | notes                                    |
++-----------------+------------+-----------+-------------------+-------------------------+---------------------------+-------------+------------------------------------------+
+|               1 |          1 |         1 | 2025-10-01        | Paracetamol             | 1 tablet twice a day      | 5 days      | Take after food                          |
+|               2 |          2 |         2 | 2025-09-25        | Amoxicillin             | 500 mg thrice a day       | 7 days      | Finish full course                       |
+|               3 |          3 |         3 | 2025-09-20        | Antihistamine           | 10 mg once daily          | 10 days     | Carry EpiPen if allergic reaction occurs |
+|               4 |          4 |         1 | 2025-10-05        | Ibuprofen               | 400 mg twice a day        | 5 days      | Take after meals                         |
+|               5 |          5 |         2 | 2025-09-28        | Salbutamol Inhaler      | 2 puffs as needed         | As required | Use inhaler during asthma attack         |
+|               6 |          6 |         3 | 2025-10-02        | Cetirizine              | 10 mg once daily          | 7 days      | For seasonal allergy                     |
+|               7 |          7 |         1 | 2025-09-22        | Insulin                 | 10 units before breakfast | Daily       | Monitor blood sugar regularly            |
+|               8 |          8 |         2 | 2025-10-03        | Oral Rehydration Salts  | 1 packet thrice a day     | 3 days      | Drink plenty of fluids                   |
+|               9 |          9 |         3 | 2025-09-30        | Hydrocortisone Cream    | Apply twice daily         | 7 days      | Avoid latex contact                      |
+|              10 |         10 |         1 | 2025-09-27        | Paracetamol             | 1 tablet every 6 hours    | 3 days      | Recovering normally                      |
+|              11 |         11 |         2 | 2025-10-04        | Gluten-free supplements | As per diet chart         | Ongoing     | Follow diet strictly                     |
+|              12 |         12 |         3 | 2025-09-29        | Migraine Relief Tablet  | 1 tablet as needed        | As required | Monitor headache frequency               |
+|              13 |         13 |         1 | 2025-09-23        | Antihistamine           | 10 mg once daily          | 10 days     | Carry epipen for shellfish allergy       |
+|              14 |         14 |         2 | 2025-10-06        | Beta-blocker            | 50 mg once daily          | Daily       | Monitor blood pressure regularly         |
+|              15 |         15 |         3 | 2025-09-26        | Antihistamine           | 10 mg once daily          | 7 days      | For egg allergy                          |
+|              16 |         16 |         1 | 2025-10-02        | Multivitamin            | 1 tablet daily            | 30 days     | Healthy individual                       |
+|              17 |         17 |         2 | 2025-10-07        | Antihistamine           | 10 mg once daily          | 10 days     | Seasonal allergy check                   |
+|              18 |         18 |         3 | 2025-09-27        | Paracetamol             | 1 tablet every 8 hours    | 5 days      | Recovering from flu                      |
+|              19 |         19 |         1 | 2025-09-25        | Antibiotics             | 500 mg twice a day        | 7 days      | Follow up required                       |
+|              20 |         20 |         2 | 2025-10-08        | Painkiller              | 1 tablet every 6 hours    | 3 days      | Routine dental care                      |
++-----------------+------------+-----------+-------------------+-------------------------+---------------------------+-------------+------------------------------------------+
+
+
+=========================================================================
+ 7 .Procedures and Surgeries:
+Create tables to record details about medical procedures and surgeries performed on
+patients. 
+
+==========================================================================
+1 CRATE TABLE PROCEDURES;
+
+mysql > CREATE TABLE procedure_surgery (
+    procedure_id INT NOT NULL AUTO_INCREMENT,
+    patient_id INT,
+    doctor_id INT,
+    procedure_name VARCHAR(50),
+    procedure_date DATE,
+    procedure_type VARCHAR(20),
+    remark VARCHAR(100),
+    PRIMARY KEY (procedure_id),
+    KEY (patient_id),
+    KEY (doctor_id)
+);
+
+============================================================================
+2 . INSERT TABLE PROCEDURES;
+
+ysql> INSERT INTO procedure_surgery (procedure_id, patient_id, doctor_id, procedure_name, procedure_date, procedure_type, remark) VALUES
+    -> (1, 1, 1, 'Appendectomy', '2025-09-15', 'Surgery', 'Successful, recovering well'),
+    -> (2, 2, 2, 'Knee Arthroscopy', '2025-09-18', 'Surgery', 'Minor swelling post-operation'),
+    -> (3, 3, 3, 'Blood Transfusion', '2025-09-20', 'Procedure', 'No complications'),
+    -> (4, 4, 1, 'Fracture Fixation', '2025-09-22', 'Surgery', 'Healing as expected'),
+    -> (5, 5, 2, 'Endoscopy', '2025-09-25', 'Procedure', 'Normal findings'),
+    -> (6, 6, 3, 'Skin Biopsy', '2025-09-27', 'Procedure', 'Sent to lab for testing'),
+    -> (7, 7, 1, 'Cataract Surgery', '2025-09-29', 'Surgery', 'Vision improved post-op'),
+    -> (8, 8, 2, 'Colonoscopy', '2025-10-01', 'Procedure', 'Routine check, no issues'),
+    -> (9, 9, 3, 'Hernia Repair', '2025-10-03', 'Surgery', 'Successful operation'),
+    -> (10, 10, 1, 'Dental Extraction', '2025-10-05', 'Procedure', 'No post-op complications'),
+    -> (11, 11, 2, 'Heart Bypass', '2025-09-10', 'Surgery', 'Patient stable, ICU monitoring'),
+    -> (12, 12, 3, 'Ultrasound Abdomen', '2025-09-12', 'Procedure', 'Normal scan results'),
+    -> (13, 13, 1, 'Tonsillectomy', '2025-09-14', 'Surgery', 'Recovery uneventful'),
+    -> (14, 14, 2, 'Liver Biopsy', '2025-09-16', 'Procedure', 'Lab results pending'),
+    -> (15, 15, 3, 'Hip Replacement', '2025-09-18', 'Surgery', 'Physiotherapy recommended'),
+    -> (16, 16, 1, 'Eye Examination', '2025-09-20', 'Procedure', 'Normal vision'),
+    -> (17, 17, 2, 'Appendectomy', '2025-09-22', 'Surgery', 'Successful recovery'),
+    -> (18, 18, 3, 'Endoscopy', '2025-09-24', 'Procedure', 'Mild irritation post-procedure'),
+    -> (19, 19, 1, 'Gallbladder Removal', '2025-09-26', 'Surgery', 'No complications'),
+    -> (20, 20, 2, 'Dental Cleaning', '2025-09-28', 'Procedure', 'Routine maintenance done');
+Query OK, 20 rows affected (0.01 sec)
+
+=============================================================
+3 .  TABLE   PROCEDURES;
+
+mysql> TABLE PROCEDURE_SURGERY;
++--------------+------------+-----------+---------------------+----------------+----------------+--------------------------------+
+| procedure_id | patient_id | doctor_id | procedure_name      | procedure_date | procedure_type | remark                         |
++--------------+------------+-----------+---------------------+----------------+----------------+--------------------------------+
+|            1 |          1 |         1 | Appendectomy        | 2025-09-15     | Surgery        | Successful, recovering well    |
+|            2 |          2 |         2 | Knee Arthroscopy    | 2025-09-18     | Surgery        | Minor swelling post-operation  |
+|            3 |          3 |         3 | Blood Transfusion   | 2025-09-20     | Procedure      | No complications               |
+|            4 |          4 |         1 | Fracture Fixation   | 2025-09-22     | Surgery        | Healing as expected            |
+|            5 |          5 |         2 | Endoscopy           | 2025-09-25     | Procedure      | Normal findings                |
+|            6 |          6 |         3 | Skin Biopsy         | 2025-09-27     | Procedure      | Sent to lab for testing        |
+|            7 |          7 |         1 | Cataract Surgery    | 2025-09-29     | Surgery        | Vision improved post-op        |
+|            8 |          8 |         2 | Colonoscopy         | 2025-10-01     | Procedure      | Routine check, no issues       |
+|            9 |          9 |         3 | Hernia Repair       | 2025-10-03     | Surgery        | Successful operation           |
+|           10 |         10 |         1 | Dental Extraction   | 2025-10-05     | Procedure      | No post-op complications       |
+|           11 |         11 |         2 | Heart Bypass        | 2025-09-10     | Surgery        | Patient stable, ICU monitoring |
+|           12 |         12 |         3 | Ultrasound Abdomen  | 2025-09-12     | Procedure      | Normal scan results            |
+|           13 |         13 |         1 | Tonsillectomy       | 2025-09-14     | Surgery        | Recovery uneventful            |
+|           14 |         14 |         2 | Liver Biopsy        | 2025-09-16     | Procedure      | Lab results pending            |
+|           15 |         15 |         3 | Hip Replacement     | 2025-09-18     | Surgery        | Physiotherapy recommended      |
+|           16 |         16 |         1 | Eye Examination     | 2025-09-20     | Procedure      | Normal vision                  |
+|           17 |         17 |         2 | Appendectomy        | 2025-09-22     | Surgery        | Successful recovery            |
+|           18 |         18 |         3 | Endoscopy           | 2025-09-24     | Procedure      | Mild irritation post-procedure |
+|           19 |         19 |         1 | Gallbladder Removal | 2025-09-26     | Surgery        | No complications               |
+|           20 |         20 |         2 | Dental Cleaning     | 2025-09-28     | Procedure      | Routine maintenance done       |
++--------------+------------+-----------+---------------------+----------------+----------------+--------------------------------+
+
+
+
+
+
+
+
+
+
+

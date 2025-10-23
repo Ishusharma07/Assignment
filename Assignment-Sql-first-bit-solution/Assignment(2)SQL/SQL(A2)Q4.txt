@@ -1,0 +1,19 @@
+4) Create the table Member again as per the schema description with the
+following constraints.
+a. Member_Id – Primary Key
+b. Membership_type - ‘Lifetime’,’ Annual’, ‘Half Yearly’,’ Quarterly’
+
+
+mysql> desc member;
++-------------------+-----------------------------------------------------+------+-----+---------+-------+
+| Field             | Type                                                | Null | Key | Default | Extra |
++-------------------+-----------------------------------------------------+------+-----+---------+-------+
+| Member_Id         | int                                                 | NO   | PRI | NULL    |       |
+| Member_Name       | varchar(30)                                         | YES  |     | NULL    |       |
+| Member_Address    | varchar(50)                                         | YES  |     | NULL    |       |
+| Acc_Open_Date     | date                                                | YES  |     | NULL    |       |
+| Membership_Type   | enum('Lifetime','Annual','Half Yearly','Quarterly') | YES  |     | NULL    |       |
+| Fees_Paid         | int                                                 | YES  |     | NULL    |       |
+| Max_Books_Allowed | int                                                 | YES  |     | NULL    |       |
+| Penalty_Amount    | decimal(7,2)                                        | YES  |     | NULL    |       |
++-------------------+-----------------------------------------------------+------+-----+---------+-------+

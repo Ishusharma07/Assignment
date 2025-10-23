@@ -1,0 +1,39 @@
+2) View the structure of the tables
+mysql> DESC MEMBER;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| Member_Id         | int          | YES  |     | NULL    |       |
+| Member_Name       | varchar(30)  | YES  |     | NULL    |       |
+| Member_Address    | varchar(50)  | YES  |     | NULL    |       |
+| Acc_Open_Date     | date         | YES  |     | NULL    |       |
+| Membership_Type   | varchar(20)  | YES  |     | NULL    |       |
+| Fees_Paid         | int          | YES  |     | NULL    |       |
+| Max_Books_Allowed | int          | YES  |     | NULL    |       |
+| Penalty_Amount    | decimal(7,2) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+
+
+
+mysql> DESC BOOK;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| BOOK_NO     | int          | YES  |     | NULL    |       |
+| BOOK_NAME   | varchar(30)  | YES  |     | NULL    |       |
+| AUTHOR_NAME | varchar(30)  | YES  |     | NULL    |       |
+| COST        | decimal(7,2) | YES  |     | NULL    |       |
+| CATEGROY    | char(10)     | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+
+
+mysql> DESC ISSUE;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| Lib_Issue_Id | int  | YES  |     | NULL    |       |
+| Book_No      | int  | YES  |     | NULL    |       |
+| Member_Id    | int  | YES  |     | NULL    |       |
+| Issue_Date   | date | YES  |     | NULL    |       |
+| Return_Date  | date | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+

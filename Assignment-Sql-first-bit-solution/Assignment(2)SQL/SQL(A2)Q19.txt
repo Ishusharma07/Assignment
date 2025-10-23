@@ -1,0 +1,2 @@
+19) View the data in the tables using simple SQL query.
+Ans = select * from books;

@@ -1,0 +1,13 @@
+34) Remove the table Member.
+
+mysql> select * from member;
++-----------+-------------+---------+------------+
+| member_id | member_name | address | phone_no   |
++-----------+-------------+---------+------------+
+|         2 | Rohit Mehta | Mumbai  | 9123456780 |
+|         3 | Priya Verma | Kolkata | 9988776655 |
++-----------+-------------+---------+------------+
+2 rows in set (0.00 sec)
+
+mysql> drop table member;
+Query OK, 0 rows affected (0.04 sec)

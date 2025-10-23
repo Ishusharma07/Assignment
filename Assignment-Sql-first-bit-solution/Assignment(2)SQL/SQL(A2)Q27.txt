@@ -1,0 +1,2 @@
+27) Now enable the constraints of Issue table. Observe the error
+ans = ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails

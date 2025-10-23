@@ -1,0 +1,2 @@
+21) Rename the table Lib_Issue to Issue.
+Ans = rename  table lib_issue and issue;

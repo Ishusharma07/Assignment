@@ -1,0 +1,11 @@
+25) Remove the constraints on Issue table
+
+Ans = mysql> show create table issuee;
+
+mysql> ALTER TABLE issuee DROP FOREIGN KEY issuee_ibfk_1;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE issuee DROP FOREIGN KEY issuee_ibfk_2;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0

@@ -1,0 +1,4 @@
+13) Generate another table named Member101 using a Create command along with a simple SQL query on member table. kya mtlb
+
+Ans = CREATE TABLE Member101 AS
+SELECT * FROM member;

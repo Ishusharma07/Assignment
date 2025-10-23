@@ -1,0 +1,18 @@
+35) Remove the table Book.
+
+Ans = mysql> select * from books;
++---------+------------------------+----------+---------------------+--------+
+| book_no | book_name              | category | author              | cost   |
++---------+------------------------+----------+---------------------+--------+
+|     101 | Let Us C               | System   | Denis               | 450.00 |
+|     105 | C Programming Language | System   | Kernighan & Ritchie | 500.00 |
+|     106 | Data Structures        | System   | Seymour Lipschutz   | 400.00 |
+|     108 | Fictional Story        | Fiction  | J.K. Rowling        | 300.00 |
+|     109 | Advanced RDBMS         | RDBMS    | Elmasri & Navathe   | 600.00 |
++---------+------------------------+----------+---------------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> drop table books;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql>

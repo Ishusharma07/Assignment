@@ -1,0 +1,10 @@
+18) Insert more records in Book table. 
+
+Ans =   mysql> INSERT INTO books (book_no, book_name, author, cost, category)
+    -> VALUES
+    -> (105, 'C Programming Language', 'Kernighan & Ritchie', 500, 'System'),
+    -> (106, 'Data Structures', 'Seymour Lipschutz', 400, 'System'),
+    -> (107, 'Learning SQL', 'Alan Beaulieu', 350, 'Database'),
+    -> (108, 'Fictional Story', 'J.K. Rowling', 300, 'Fiction'),
+    -> (109, 'Advanced RDBMS', 'Elmasri & Navathe', 600, 'RDBMS');
+Query OK, 5 rows affected (0.00 sec)

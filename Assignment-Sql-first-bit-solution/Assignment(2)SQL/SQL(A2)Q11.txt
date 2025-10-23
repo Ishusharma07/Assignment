@@ -1,0 +1,5 @@
+11) Modify the column Member_name. Decrease the width of the member
+name to 20 characters. (If it does not allow state the reason for that)
+
+ans =  ALTER TABLE member
+    -> CHANGE COLUMN member_name member_name VARCHAR(10);

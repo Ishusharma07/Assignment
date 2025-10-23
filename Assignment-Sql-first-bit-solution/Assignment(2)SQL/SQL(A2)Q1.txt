@@ -1,0 +1,34 @@
+Task / Problems:
+1) Create the table Member, Books and Issue without any constraints as
+mentioned in the schema description above. 
+
+mysql> CREATE TABLE Member (
+    ->     Member_Id INT,
+    ->     Member_Name VARCHAR(30),
+    ->     Member_Address VARCHAR(50),
+    ->     Acc_Open_Date DATE,
+    ->     Membership_Type VARCHAR(20),
+    ->     Fees_Paid INT,
+    ->     Max_Books_Allowed INT,
+    ->     Penalty_Amount DECIMAL(7,2)
+    -> );
+
+
+
+mysql> CREATE TABLE BOOK(
+    -> BOOK_NO INT,
+    -> BOOK_NAME VARCHAR(30),
+    -> AUTHOR_NAME VARCHAR(30),
+    -> COST DECIMAL(7,2),
+    -> CATEGROY CHAR(10));
+
+
+
+
+mysql> CREATE TABLE Issue (
+    ->     Lib_Issue_Id INT,
+    ->     Book_No INT,
+    ->     Member_Id INT,
+    ->     Issue_Date DATE,
+    ->     Return_Date DATE
+    -> );

@@ -1,0 +1,27 @@
+14) Add the constraints on columns max_books_allowed and penalty_amt
+as follows
+a. max_books_allowed < 100
+b. penalty_amt maximum 1000
+Also give names to the constraints.
+
+Ans = 
+mysql> CREATE TABLE Member101 (
+    ->     member_id INT PRIMARY KEY,
+    ->     member_name VARCHAR(50),
+    ->     max_books_allowed INT,
+    ->     penalty_amt DECIMAL(10,2),
+    ->     CONSTRAINT chk_max_books CHECK (max_books_allowed < 100),
+    ->     CONSTRAINT chk_penalty CHECK (penalty_amt <= 1000)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> desc Member101;
++-------------------+---------------+------+-----+---------+-------+
+| Field             | Type          | Null | Key | Default | Extra |
++-------------------+---------------+------+-----+---------+-------+
+| member_id         | int           | NO   | PRI | NULL    |       |
+| member_name       | varchar(50)   | YES  |     | NULL    |       |
+| max_books_allowed | int           | YES  |     | NULL    |       |
+| penalty_amt       | decimal(10,2) | YES  |     | NULL    |       |
++-------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.03 sec)

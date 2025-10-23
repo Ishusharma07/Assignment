@@ -1,0 +1,13 @@
+16) Create table Books again as per the schema description with the
+following constraints.
+a. Book_No – Primary Key
+b. Book_Name – Not Null
+c. Category – System, Fiction, Database, RDBMS, Others.
+
+
+Ans =   category enum('System' , 'fiction' , 'database'' at line 2
+mysql> CREATE TABLE books (
+    ->     book_no INT PRIMARY KEY,
+    ->     book_name VARCHAR(50) NOT NULL,
+    ->     category ENUM('System', 'Fiction', 'Database', 'RDBMS')
+    -> );

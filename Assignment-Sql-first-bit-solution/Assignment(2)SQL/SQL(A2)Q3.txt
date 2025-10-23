@@ -1,0 +1,2 @@
+3) Drop the Member table
+ANS = mysql> drop table member;

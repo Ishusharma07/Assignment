@@ -1,0 +1,5 @@
+5) Modify the table Member increase the width of the member name to 30
+characters.
+
+ans = aleter table member
+	modify member_name varchar(30);

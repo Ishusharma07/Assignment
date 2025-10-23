@@ -1,0 +1,7 @@
+33) Remove all the records from Book table with category other
+
+than RDBMS and Database.
+
+Ans = mysql> delete from books
+    -> where category = 'database';
+Query OK, 4 rows affected (0.01 sec)

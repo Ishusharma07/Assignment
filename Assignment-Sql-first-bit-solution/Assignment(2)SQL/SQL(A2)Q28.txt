@@ -1,0 +1,5 @@
+28) Delete the record inserted at Q-27) and enable the constraints.
+
+ans =  mysql> DELETE FROM issuee
+    -> WHERE lib_issue_id = 7007;
+Query OK, 1 row affected (0.01 sec)

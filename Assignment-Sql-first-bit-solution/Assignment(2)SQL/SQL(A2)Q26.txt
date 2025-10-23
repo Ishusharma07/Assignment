@@ -1,0 +1,5 @@
+26) Insert a record in Issue table. The member_id should not exist in  member table. 
+
+ans mysql> INSERT INTO issuee (lib_issue_id, book_no, member_id, issue_date, return_date)
+    -> VALUES (7010, 101, 99, '2006-12-31', NULL);
+Query OK, 1 row affected (0.02 sec) 

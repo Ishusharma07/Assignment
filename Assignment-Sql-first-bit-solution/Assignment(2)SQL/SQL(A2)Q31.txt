@@ -1,0 +1,9 @@
+31) Modify the Return_Date of 7004,7005 to 15 days after the
+
+Issue_date.
+
+ans = mysql> UPDATE issuee
+    -> SET return_date = DATE_ADD(issue_date, INTERVAL 15 DAY)
+    -> WHERE lib_issue_id = 7004 OR lib_issue_id = 7005;
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0

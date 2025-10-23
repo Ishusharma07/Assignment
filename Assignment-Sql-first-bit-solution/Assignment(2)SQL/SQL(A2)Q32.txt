@@ -1,0 +1,6 @@
+32) Remove all the records from Issue table where member_ID is 1
+
+and Issue date in before 10-Dec-06.
+
+ans = mysql > delete from issuee
+                         where iss__date = '2006-12-10';		

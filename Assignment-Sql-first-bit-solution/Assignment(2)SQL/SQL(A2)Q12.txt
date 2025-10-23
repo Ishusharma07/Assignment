@@ -1,0 +1,5 @@
+12) Try to insert a record with Max_Books_Allowed = 110, Observe the
+error that comes.
+
+ans =  ALTER TABLE member
+    ADD CONSTRAINT chk_MaxBooks CHECK (Max_Books_Allowed <= 100);

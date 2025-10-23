@@ -1,0 +1,3 @@
+22) Drop table Issue.
+ ans = mysql> drop tables issue;
+Query OK, 0 rows affected (0.02 sec)

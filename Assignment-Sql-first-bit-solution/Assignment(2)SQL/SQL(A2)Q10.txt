@@ -1,0 +1,21 @@
+10) Insert at least 5 records with suitable data.
+
+mysql> insert into member(Member_id, member_name, member_Address, Acc_open_date, Membership_Type,
+    -> Fees_paid, Max_Books_Allowed, penalty_Amount)
+    -> values
+    -> (3, 'ishu sharma', 'haryana', '2020-09-20', 'lifetime', 25000, 4, 20),
+    -> (4, 'ujwall sharma', 'delhi', '2021-09-20', 'half yearly', 2000, 2, 10),
+    -> (5, 'yash sharma', 'mumbai', '2022-02-10', 'annual', 1200, 1, 0);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> table member;
++-----------+---------------+----------------+---------------+-----------------+-----------+-------------------+----------------+
+| Member_Id | member_name   | Member_Address | Acc_Open_Date | Membership_Type | Fees_Paid | Max_Books_Allowed | Penalty_Amount |
++-----------+---------------+----------------+---------------+-----------------+-----------+-------------------+----------------+
+|         1 | richa sharma  | pune           | 2010-12-05    | Lifetime        |     25000 |                 5 |          50.00 |
+|         2 | garima sen    | pune           | 2025-10-15    | Annual          |      1000 |                 3 |           NULL |
+|         3 | ishu sharma   | haryana        | 2020-09-20    | Lifetime        |     25000 |                 4 |          20.00 |
+|         4 | ujwall sharma | delhi          | 2021-09-20    | Half Yearly     |      2000 |                 2 |          10.00 |
+|         5 | yash sharma   | mumbai         | 2022-02-10    | Annual          |      1200 |                 1 |           0.00 |
++-----------+---------------+----------------+---------------+-----------------+-----------+-------------------+----------------+

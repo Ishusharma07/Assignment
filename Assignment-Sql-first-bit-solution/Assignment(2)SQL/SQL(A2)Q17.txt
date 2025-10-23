@@ -1,0 +1,19 @@
+17) Insert data in Book table as follows:
+
+mysql> INSERT INTO books (book_no, book_name, author, cost, category)
+    -> VALUES
+    -> (101, 'Let Us C', 'Denis', 450, 'System'),
+    -> (102, 'Oracle', 'Loni', 550, 'Database'),
+    -> (103, 'Mastering SQL', 'Loni', 250, 'Database'),
+    -> (104, 'PL SQL-Ref', 'Scott Urman', 750, 'Database');
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
++---------+---------------+----------+-------------+--------+
+| book_no | book_name     | category | author      | cost   |
++---------+---------------+----------+-------------+--------+
+|     101 | Let Us C      | System   | Denis       | 450.00 |
+|     102 | Oracle        | Database | Loni        | 550.00 |
+|     103 | Mastering SQL | Database | Loni        | 250.00 |
+|     104 | PL SQL-Ref    | Database | Scott Urman | 750.00 |
++---------+---------------+----------+-------------+--------+

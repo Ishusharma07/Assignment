@@ -1,0 +1,19 @@
+23) As per the given structure Create table Issue again with following
+constraints.
+
+ Lib_Issue_Id-Primary key
+ Book_No- foreign key
+ Member_id - foreign key
+ Issue_date
+ Return_date
+
+Ans = mysql> CREATE TABLE issuee (
+    ->     lib_issue_id INT PRIMARY KEY,
+    ->     book_no INT,
+    ->     member_id INT,
+    ->     issue_date DATE,
+    ->     return_date DATE,
+    ->     FOREIGN KEY (book_no) REFERENCES books(book_no),
+    ->     FOREIGN KEY (member_id) REFERENCES member(member_id)
+    -> );
+Query OK, 0 rows affected (0.07 sec)

@@ -1,0 +1,3 @@
+6) Add a column named as Reference of Char(30) to Issue table. 
+ans = alter table issue 
+	add column reference varchar(30);

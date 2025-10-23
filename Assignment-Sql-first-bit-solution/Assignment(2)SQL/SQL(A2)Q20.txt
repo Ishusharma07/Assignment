@@ -1,0 +1,10 @@
+20) Insert into Book following data.
+
+INSERT INTO books (book_no, book_name, author, cost, category)
+VALUES
+(110, 'Java Programming', 'Herbert Schildt', 500, 'System'),
+(111, 'Python Basics', 'Guido van Rossum', 450, 'System'),
+(112, 'The Alchemist', 'Paulo Coelho', 300, 'Fiction'),
+(113, 'Database Management', 'Ramez Elmasri', 600, 'Database'),
+(114, 'RDBMS Concepts', 'Navathe', 550, 'RDBMS');
+ 

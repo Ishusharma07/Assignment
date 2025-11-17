@@ -1,0 +1,179 @@
+package inheritance;
+
+class employee {
+    int id;
+    String name;
+    double salary;
+    static int count = 0;
+
+    employee() {
+        this.id = 1;
+        this.name = "kanu";
+        this.salary = 23000;
+        count++;
+    }
+
+    employee(int n , String g , double s){
+        this.id = n;
+        this.name = g;
+        this.salary = s;
+        count++;
+    }
+
+    void setid(int i) {
+        this.id = i;
+    }
+
+    void setname(String s) {
+        this.name = s;
+    }
+    void setsalary(double d) {
+        this.salary = d;
+    }
+
+    int getid() {
+        return this.id;
+    }
+
+    String getname() {     // FIXED
+        return this.name;
+    }
+
+    double getsalary(){
+        return this.salary;
+    }
+
+    static int getCount() {
+        return count;
+    }
+
+    void display() {
+        System.out.println("id = " + this.id);
+        System.out.println("name = " + this.name);
+        System.out.println("salary = " + this.salary);
+    }
+}
+
+class hr extends employee {
+    String department;
+    int teamsize;
+
+    String getDepartment() {
+        return department;
+    }
+    void setDepartment(String department) {
+        this.department = department;
+    }
+    int getTeamsize() {
+        return teamsize;
+    }
+    void setTeamsize(int teamsize) {
+        this.teamsize = teamsize;
+    }
+
+    hr(){
+        super();
+        this.department = "Human Resources";
+        this.teamsize = 5;
+    }
+
+    hr(int id , String name , double salary , String s , int i){
+        super(id , name , salary);
+        this.department = s;
+        this.teamsize = i;
+    }
+
+    void display() {
+        super.display();
+        System.out.println("department : " + this.department);
+        System.out.println("teamsize : " + this.teamsize);
+    }
+}
+
+class admin extends employee {
+    String location;
+    String role;
+
+    admin(){
+        super();
+        this.location = "pune";
+        this.role = "System Administrator";
+    }
+
+    admin(int id , String name , double salary, String s , String b){
+        super(id , name , salary);
+        this.location = s;
+        this.role = b;
+    }
+
+    String getLocation() {
+        return location;
+    }
+    void setLocation(String locatin) {
+        this.location = locatin;
+    }
+    String getRole() {
+        return role;
+    }
+    void setRole(String role) {
+        this.role = role;
+    }
+
+    void display() {     // FIXED
+        super.display();
+        System.out.println("location : " + this.location);
+        System.out.println("role : " + this.role);
+    }
+}
+
+class salesmanger extends employee {
+    String region;
+    double incentive;
+
+    String getRegion() {
+        return region;
+    }
+
+    void setRegion(String region) {
+        this.region = region;
+    }
+
+    double getIncentive() {
+        return incentive;
+    }
+    void setIncentive(double incentive) {
+        this.incentive = incentive;
+    }
+
+    salesmanger(){
+        super();
+        this.region = "West";
+        this.incentive = 10000;
+    }
+
+    salesmanger( int id , String name , double salary ,String s , double i){
+        super(id , name , salary);
+        this.region =  s;
+        this.incentive = i;
+    }
+}
+
+class Employemain {
+    public static void  main(String[] args ) {
+
+        hr h1 = new hr();
+        h1.display();
+        System.out.println("\n");
+
+        admin ad = new admin(102 , "ishu" , 60000 , "mumbai" , "Network Admin");
+        ad.display();
+        System.out.println("\n");
+
+        salesmanger s1  = new salesmanger(103 , "kanu" , 700000 , "pune" , 3000);
+        s1.display();
+        System.out.println("\n");
+
+        System.out.println("Total Employees: " + employee.getCount());
+    }
+}
+
